@@ -39,19 +39,27 @@ jobs:
           ref: ${{ env.SOURCE_BRANCH }}
           path: unity-api-source
 
-      # Run our own import/normalisation script.
-      #
-      # This keeps formatting logic out of the GitHub Actions YAML so the
-      # exact same import can be tested locally.
-      - name: Import and normalise Unity API documentation
+      # Replace the generated API documentation with the latest copy
+      # from the Unity project's public api-docs branch.
+      - name: Import Unity API documentation
         working-directory: docs-site
         shell: bash
         run: |
-          python scripts/documentation-import/normalize_docfx.py \
-            --input "../unity-api-source/${SOURCE_DIR}" \
-            --output "${OUTPUT_DIR}"
+          echo "Source repository: ${SOURCE_REPOSITORY}"
+          echo "Source branch:     ${SOURCE_BRANCH}"
+          echo "Source directory:  ${SOURCE_DIR}"
+          echo "Output directory:  ${OUTPUT_DIR}"
 
-      # Useful during development so we can see exactly what was imported.
+          rm -rf "${OUTPUT_DIR}"
+          mkdir -p "${OUTPUT_DIR}"
+
+          cp -R "../unity-api-source/${SOURCE_DIR}/." "${OUTPUT_DIR}/"
+
+          # Never copy the source repository's Git metadata.
+          rm -rf "${OUTPUT_DIR}/.git"
+
+      # Useful while developing the pipeline so the Action log shows
+      # exactly which generated documentation files were imported.
       - name: Show imported files
         working-directory: docs-site
         shell: bash
@@ -59,7 +67,7 @@ jobs:
           echo "Imported documentation:"
           find "${OUTPUT_DIR}" -type f | sort
 
-      # Commit only if the generated documentation actually changed.
+      # Commit only when the generated documentation actually changed.
       - name: Commit imported documentation
         working-directory: docs-site
         shell: bash
