@@ -1,0 +1,56 @@
+name: Import Unity API Documentation
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout documentation repository
+        uses: actions/checkout@v4
+        with:
+          path: docs-site
+
+      - name: Checkout generated Unity API documentation
+        uses: actions/checkout@v4
+        with:
+          repository: Mondotrasho/UnityDocumentationTest
+          ref: api-docs
+          path: unity-api-source
+
+      - name: Replace imported Unity API documentation
+        shell: bash
+        run: |
+          rm -rf docs-site/docs/unity-api
+          mkdir -p docs-site/docs/unity-api
+
+          cp -R unity-api-source/. docs-site/docs/unity-api/
+
+          rm -rf docs-site/docs/unity-api/.git
+
+      - name: Show imported files
+        shell: bash
+        run: |
+          find docs-site/docs/unity-api -maxdepth 3 -type f | sort
+
+      - name: Commit imported documentation
+        shell: bash
+        working-directory: docs-site
+        run: |
+          git config user.name "docs-import-bot"
+          git config user.email "docs-import-bot@users.noreply.github.com"
+
+          git add docs/unity-api
+
+          if git diff --cached --quiet; then
+            echo "No documentation changes."
+            exit 0
+          fi
+
+          git commit -m "docs: import Unity API documentation"
+          git push
