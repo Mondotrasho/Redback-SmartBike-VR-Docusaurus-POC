@@ -18,7 +18,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[SimpleTrigger](SimpleTrigger.md)
+[SimpleTrigger](Global.SimpleTrigger.md)
 
 #### Inherited Members
 

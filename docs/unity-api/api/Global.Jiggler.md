@@ -18,7 +18,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[Jiggler](Jiggler.md)
+[Jiggler](Global.Jiggler.md)
 
 #### Inherited Members
 

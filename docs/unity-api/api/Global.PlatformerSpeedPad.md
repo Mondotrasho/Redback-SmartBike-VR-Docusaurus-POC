@@ -18,7 +18,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[PlatformerSpeedPad](PlatformerSpeedPad.md)
+[PlatformerSpeedPad](Global.PlatformerSpeedPad.md)
 
 #### Inherited Members
 

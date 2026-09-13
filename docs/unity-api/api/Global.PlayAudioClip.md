@@ -19,7 +19,7 @@ public class PlayAudioClip : StateMachineBehaviour
 Object ← 
 ScriptableObject ← 
 StateMachineBehaviour ← 
-[PlayAudioClip](PlayAudioClip.md)
+[PlayAudioClip](Global.PlayAudioClip.md)
 
 #### Inherited Members
 

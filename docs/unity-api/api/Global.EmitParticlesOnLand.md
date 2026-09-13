@@ -19,7 +19,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[EmitParticlesOnLand](EmitParticlesOnLand.md)
+[EmitParticlesOnLand](Global.EmitParticlesOnLand.md)
 
 #### Inherited Members
 

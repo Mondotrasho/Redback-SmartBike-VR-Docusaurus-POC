@@ -18,7 +18,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[PlatformerJumpPad](PlatformerJumpPad.md)
+[PlatformerJumpPad](Global.PlatformerJumpPad.md)
 
 #### Inherited Members
 
