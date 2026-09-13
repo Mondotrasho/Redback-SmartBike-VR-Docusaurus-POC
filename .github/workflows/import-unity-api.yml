@@ -15,7 +15,7 @@ env:
 
   # Directory inside SOURCE_BRANCH containing the documentation.
   # The api-docs branch currently stores the generated files at its root.
-  SOURCE_DIR: .
+  SOURCE_DIR: api
 
   # Destination inside this documentation repository.
   OUTPUT_DIR: docs/unity-api
