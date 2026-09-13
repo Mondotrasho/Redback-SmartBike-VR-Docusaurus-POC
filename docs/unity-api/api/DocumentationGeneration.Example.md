@@ -1,3 +1,7 @@
+---
+title: "Namespace DocumentationGeneration.Example"
+sidebar_label: "DocumentationGeneration.Example"
+---
 # <a id="DocumentationGeneration_Example"></a> Namespace DocumentationGeneration.Example
 
 ### Classes

@@ -1,13 +1,16 @@
-# <a id="DocumentationGeneration_Example_DocumentationExample"></a> Class DocumentationExample
+---
+title: "Class VictoryZone"
+sidebar_label: "VictoryZone"
+---
+# <a id="Platformer_Mechanics_VictoryZone"></a> Class VictoryZone
 
-Namespace: [DocumentationGeneration.Example](DocumentationGeneration.Example.md)  
+Namespace: [Platformer.Mechanics](Platformer.Mechanics.md)  
 Assembly: DocFxProject.dll  
 
-Smallish Unity component used to prove that standard C# XML comments
-can become generated API documentation automatically.
+Marks a trigger as a VictoryZone, usually used to end the current game level.
 
 ```csharp
-public class DocumentationExample : MonoBehaviour
+public class VictoryZone : MonoBehaviour
 ```
 
 #### Inheritance
@@ -17,7 +20,7 @@ Object ←
 Component ← 
 Behaviour ← 
 MonoBehaviour ← 
-[DocumentationExample](DocumentationGeneration.Example.DocumentationExample.md)
+[VictoryZone](Platformer.Mechanics.VictoryZone.md)
 
 #### Inherited Members
 
@@ -150,48 +153,4 @@ Object.hideFlags,
 [object.MemberwiseClone\(\)](https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone), 
 [object.ReferenceEquals\(object, object\)](https://learn.microsoft.com/dotnet/api/system.object.referenceequals), 
 [object.ToString\(\)](https://learn.microsoft.com/dotnet/api/system.object.tostring)
-
-## Properties
-
-### <a id="DocumentationGeneration_Example_DocumentationExample_Target"></a> Target
-
-Gets the object currently assigned as this component's target.
-
-```csharp
-public GameObject Target { get; }
-```
-
-#### Property Value
-
- GameObject
-
-## Methods
-
-### <a id="DocumentationGeneration_Example_DocumentationExample_GetDistanceToTarget"></a> GetDistanceToTarget\(\)
-
-Returns the distance from this component to the current target.
-
-```csharp
-public float GetDistanceToTarget()
-```
-
-#### Returns
-
- [float](https://learn.microsoft.com/dotnet/api/system.single)
-
-The distance in Unity world units, or zero when no target is assigned.
-
-### <a id="DocumentationGeneration_Example_DocumentationExample_SetTarget_UnityEngine_GameObject_"></a> SetTarget\(GameObject\)
-
-Assigns the target GameObject used by this documentation test.
-
-```csharp
-public void SetTarget(GameObject target)
-```
-
-#### Parameters
-
-`target` GameObject
-
-The Unity object that should become the current target.
 
