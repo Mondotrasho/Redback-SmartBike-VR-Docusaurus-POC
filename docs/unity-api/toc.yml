@@ -1,0 +1,11 @@
+### YamlMime:TableOfContent
+- name: DocumentationGeneration
+  href: DocumentationGeneration.md
+  items:
+  - name: Example
+    href: DocumentationGeneration.Example.md
+    items:
+    - name: Classes
+      items:
+      - name: DocumentationExample
+        href: DocumentationGeneration.Example.DocumentationExample.md
