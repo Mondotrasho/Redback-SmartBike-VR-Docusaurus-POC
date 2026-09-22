@@ -8,13 +8,12 @@ permissions:
 
 env:
   # Public repository containing the generated DocFX documentation.
-  SOURCE_REPOSITORY: Mondotrasho/UnityDocumentationTest
+  SOURCE_REPOSITORY: Mondotrasho/Redback-SmartBike-VR-DocFX-POC
 
   # Branch containing the generated DocFX Markdown.
   SOURCE_BRANCH: api-docs
 
-  # Directory inside SOURCE_BRANCH containing the documentation.
-  # The api-docs branch currently stores the generated files at its root.
+  # Import the complete generated branch output used by this POC.
   SOURCE_DIR: .
 
   # Destination inside this documentation repository.
@@ -25,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout this private documentation repository.
+      # Checkout the documentation repository that receives the generated files.
       - name: Checkout documentation repository
         uses: actions/checkout@v4
         with:
@@ -58,8 +57,8 @@ jobs:
           # Never copy the source repository's Git metadata.
           rm -rf "${OUTPUT_DIR}/.git"
 
-      # Useful while developing the pipeline so the Action log shows
-      # exactly which generated documentation files were imported.
+      # Keep the imported file list visible in the Action log while
+      # this remains a proof of concept.
       - name: Show imported files
         working-directory: docs-site
         shell: bash
