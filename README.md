@@ -11,3 +11,4 @@ Install the recorded dependencies and build the site:
 ```powershell
 npm ci
 npm run build
+```
